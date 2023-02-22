@@ -1,0 +1,497 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <!--Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--BOOTSTRAP/CSS/JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script src="../javascript/emergency-modal.js"></script>
+
+  <title>proConnect</title>
+
+  <style>
+    *{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+        font-family: 'Mulish';
+    }
+
+    :root{
+        --lighter-black:#252733;
+        --input-component:#9FA2B4;
+        --main-color:#363740;
+        --input-bg:#FCFDFE;
+        --light-btn-border:#CDCDCD;
+        --placeholder-color:#b8bedd;
+        --border-color:#DFE0EB;
+        --emergency-modal:#E40019;
+    }
+
+    /* BUTTON */
+    button.btn-red, a.btn-red{
+        font-size:14px;
+        letter-spacing:0.3px;
+        border-radius: 8px;
+        background-color: var(--emergency-modal) !important;
+        border:1px solid var(--emergency-modal) !important;
+        padding:.375rem .85rem;
+        color:white !important;
+        font-weight:400 !important;
+    }
+
+    .btn-red:hover{
+        animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+        color:white !important;
+    }
+
+    @keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(1px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(1px, 0, 0);
+    }}
+
+    h4,h5,p,h3{
+        padding:0px;
+        margin:0px;
+    }
+
+    h4{
+        letter-spacing: 0.3px;
+        font-weight:700;
+    }
+
+    h5{
+        font-size:19px;
+        font-weight:700;
+        letter-spacing:0.4px;
+    }
+
+    .addForm select {
+        padding: 0.45rem 0.75rem !important;
+    }
+
+    .emergency-modal .button-container select {
+        width: 10rem;
+    }
+
+    .addForm .form-control, .addForm select {
+        padding: 0.45rem 0.75rem !important;
+    }
+
+    .addForm select{
+    background-color: var(--input-bg);
+    border:1px solid var(--light-btn-border);
+    font-size:14px;
+    color:var(--input-component);
+    border-radius:8px;
+    max-width:30em;
+    }
+
+.emergency-modal {
+        background-color:black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100vh;
+    }
+
+    button.btn-close{
+        padding:0px !important;
+        color:white !important;
+        transition: 0.3s all ease;
+        background:none;
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        opacity:1;
+    }
+
+    button.btn-close:focus{
+        box-shadow: none;
+    }
+
+    .btn-close i{
+        color:white;
+        font-size:32px;
+        transition: 0.3s all ease;
+    }
+    
+    button.btn-close:hover i{
+        opacity:1;
+        transform: rotate(90deg);
+    }
+
+    .emergency-modal .modal-content{
+        position:relative;
+        background-color: var(--emergency-modal);
+        border-radius: 8px;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        padding:1.75rem 0.25rem 0.25rem 0.25rem;
+    }
+
+    .emergency-modal .fa-bell-exclamation{
+        font-size:38px;
+    }
+
+    .emergency-modal .head-logo{
+        width:2.375rem;
+        height:2.375rem;
+    }
+
+    .emergency-modal .header-txt{
+        margin-bottom:1.75rem;
+        margin-top:1rem;
+        color:white;
+    }
+
+    .emergency-modal .hyperlink-container{
+        position:relative;
+        --bs-gutter-x:0;
+    }
+
+    .emergency-modal .hyperlink-container a{
+        text-decoration:none;
+        font-weight:700;
+        font-size:19px;
+        letter-spacing:0.4px;
+        color: var(--input-component);
+        white-space: nowrap;
+    }
+
+    .emergency-modal .hyperlink-container a:first-child{
+        padding-left:1.5rem;
+    }
+
+    .emergency-modal .hyperlink-container a:last-child{
+        padding-right:1.5rem;
+    }
+
+    .emergency-modal a.emergency{
+        padding-bottom:0.6rem;
+    }
+
+    .emergency-modal a.emergency.active{
+        color:var(--emergency-modal);
+        border-bottom:3px solid var(--emergency-modal);
+    }
+
+    .emergency-modal .bottom-lineDivider{
+        border-bottom:1px solid var(--border-color);
+        width:100%;
+    }
+
+    .emergency-modal .row.resident-info,
+    .emergency-modal .row.emergency-info{
+        width:100%;
+        --bs-gutter-x:0;
+        padding:1rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .emergency-modal .row.resident-info.last,
+    .emergency-modal .row.emergency-info.last{
+        border:none;
+    }
+
+    .emergency-modal .row.emergency-info.header{
+    padding-bottom:0.5rem;
+    }
+
+    .emergency-modal .row.hoverLine{
+        width:100%;
+        --bs-gutter-x:0;
+        margin-top:0.5rem;
+        margin-bottom:1rem;
+    }
+
+    .emergency-modal .row-title{
+        color:var(--input-component);
+        font-size:14px;
+        letter-spacing: 0.2px;
+        font-weight:600;
+    }
+
+    .emergency-modal .row-desc{
+        color: black;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        font-weight: 600;
+    }
+
+    .emergency-modal .resident-info-wrapper,
+    .emergency-modal .emergency-info-wrapper{
+        padding:0 2rem;
+        width:100%;
+    }
+
+    .emergency-modal .emergency-info-wrapper{
+        overflow-y: scroll;
+        max-height:calc(100vh - 400px);
+    }
+
+    .emergency-modal .emergency-info-wrapper::-webkit-scrollbar{
+        width:5px;
+    }
+
+    .emergency-modal .emergency-modal-wrapper::-webkit-scrollbar-track{
+        background-color:var(--border-color);
+    }
+
+    /* Handle */
+    .emergency-modal .emergency-modal-wrapper::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    .emergency-modal .emergency-modal-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+    .emergency-modal .buttonWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 0 1.25rem;
+        margin-bottom:0.75rem;
+    }
+
+    .emergency-modal .button-container{
+        display: flex;
+    }
+
+    .emergency-modal .button-container button{
+        white-space: nowrap;
+        margin-left:1.5rem;
+    }
+
+    .emergency-modal button{
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+
+    .modal-header{
+        flex-direction: column;
+        justify-content: center;
+        padding:0;
+    }
+
+    .modal-header , .modal-footer{
+        border:none;
+    }
+
+    .modal-body{
+        background-color:white ;
+        padding:0 !important;
+        padding-top:0.75rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .modal-footer{
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .modal-header, .modal-body, .modal-footer{
+        width:100%;
+    }
+    
+
+  </style>
+</head>
+
+<body class="emergency-modal">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+  
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- HEADER -->
+                <div class="modal-header">
+                    <img src="../images/siren.png" class="head-logo" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fal fa-times"></i>
+                    </button>
+                    <h5 class="header-txt">EMERGENCY ALERT!</h5>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="modal-body">
+                    <div class="hyperlink-container text-center row gy-3">
+                        <div class="col-6">
+                            <a href="#" class="emergency active">Resident Information</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="emergency">Emergency Contacts</a>
+                        </div>
+                    </div>
+    
+                    <div class="row hoverLine">
+                        <div class="col">
+                            <!-- DIVIDER -->
+                            <div class="bottom-lineDivider"></div>
+                        </div>
+                        <div class="col">
+                            <!-- DIVIDER -->
+                            <div class="bottom-lineDivider"></div>
+                        </div>
+                    </div>
+
+                    <!-- RESIDENT INFORMATION -->
+                    <!-- UNIT -->
+                    <div class="resident-info-wrapper">
+                        <div class="row resident-info">
+                            <div class="col-5">
+                                <span class="row-title">Unit</span>
+                            </div>
+                            <div class="col">
+                                <span class="row-desc">A-2-2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESIDENT NAME -->
+                    <div class="resident-info-wrapper">
+                        <div class="row resident-info">
+                            <div class="col-5">
+                                <span class="row-title">Name</span>
+                            </div>
+                            <div class="col">
+                                <span class="row-desc">John Doe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PHONE NUMBER -->
+                    <div class="resident-info-wrapper">
+                        <div class="row resident-info last">
+                            <div class="col-5">
+                                <span class="row-title">Phone Number</span>
+                            </div>
+                            <div class="col">
+                                <span class="row-desc">01111111111</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RESIDENT INFORMATION END -->
+
+                    <!-- EMERGENCY CONTRACT -->
+                    <!-- <div class="emergency-info-wrapper">
+                        
+                        <div class="row emergency-info header">
+                            <div class="col-6">
+                                <span class="row-title">Name</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="row-title">Phone Number</span>
+                            </div>
+                        </div> -->
+
+                        <!-- CONTRACT LIST -->
+                        <!-- <div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div> -->
+
+                        <!-- COPY [ LAST CLASS ADD .last]-->
+                        <!-- <div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div><div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div><div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div><div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div>
+                        <div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div><div class="row emergency-info">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div><div class="row emergency-info last">
+                            <div class="col-6">
+                                <span class="row-desc">John Doe long name</span>
+                            </div>
+                            <div class="col-6"><span class="row-desc">0123782638</span></div>
+                        </div> -->
+                        <!-- COPY END -->
+
+                    <!-- </div> -->
+                    <!-- EMERGENCY CONTRACT END -->
+
+                </div>
+                
+
+                <!-- FOOTER -->
+                <div class="modal-footer">
+                    <div class="buttonWrapper addForm">
+                        <form>
+                            <div class="button-container">
+                                <!-- FOOTER -->
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Status</option>
+                                    <option>New</option>
+                                    <option>Processing</option>
+                                    <option>Solved</option>
+                                </select>
+                                
+                                <button type="button" class="btn btn-red">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- emergency-modal MODAL END -->
+
+</body>
+
+</html>

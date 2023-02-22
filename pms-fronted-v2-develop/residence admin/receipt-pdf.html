@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proConnect</title>
+
+    <style>
+        /* for PDF font */
+        /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap'); */
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+        *{
+            margin:0;
+            padding:0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family:'Open Sans', 'Arial', sans-serif;
+        }
+
+        html{
+            background-color: #FAFAFA;
+        }
+
+        h1{
+            font-size:23px;
+            letter-spacing: 0.2px;
+            font-weight:700;
+            text-align: left;
+        }
+
+        body{
+            width:816px;
+            margin:0 auto;
+            counter-reset: pages;
+        }
+
+        .mb-2{
+            margin:0 0 0.5em 0;
+        }
+
+        .pdf-table .description{
+            font-size:12px;
+            letter-spacing: 0.05px;
+        }
+
+        .address-title{
+            font-weight:700;
+            font-size:16px;
+            margin-bottom:0.5rem;
+        }
+
+        .pdf-table.address-wrapper{
+            margin-top:2rem;
+            position:relative;
+            text-align: left;
+        }
+
+        .address-wrapper .description{
+            line-height:17px;
+        }
+
+        .pdf-table.address-wrapper td{
+            vertical-align: top;
+            padding:0 1rem 0 0;
+            width:35%;
+        }
+
+        .logo-wrapper{
+            padding:0 !important;
+        }
+
+        .logo-container{
+            text-align: end;
+            padding:0 !important;
+            background: url("../images/proConnect.png");
+            background-size:120px;
+            height:120px;
+            width:120px;
+            background-repeat: no-repeat;
+            margin:0 0 0 auto;
+        }
+
+        .pdf-table.address-wrapper img{
+            width:90px;
+            height:auto;
+        }
+
+        .pdf-table.address-wrapper .last-child{
+            padding:0 0 0 1rem;
+            margin:0;
+        }
+
+        /* table */
+        .table-container .pdf-table td{
+            border-color:#C5C5C5;
+            border-style:solid;
+            border-width:0 2px 2px 2px;
+        }
+
+        .table-container .pdf-table{
+            width:100%;
+            border-collapse: collapse;
+        }
+
+        .table-container .pdf-table th{
+            color:white;
+            border-color:#C5C5C5;
+            border-style:solid;
+            border-width:2px 2px 0 2px;
+            font-size:12px;
+            letter-spacing: 0.15px;
+            font-weight:700;
+            padding:0.5rem 0;
+            background-color:  #363740;
+        }
+
+        .table-container .pdf-table td{
+            text-align:center;
+            padding:0.5rem;
+            font-size: 11px;
+            letter-spacing: 0.1px;
+        }
+
+        .table-container .pdf-table tbody{
+            background-color: white;
+        }
+
+        .subTotal-wrapper{
+            width:40%;
+            margin:1rem 0 3rem auto;
+            text-align: right;
+            page-break-inside: avoid;
+        }
+
+        .subTotal-wrapper .pdf-table{
+            text-align: right;
+            width:100%;
+            margin: 0 0 0 auto;
+        }
+
+        /* footer */
+        .footer-contents .description{
+            font-size:12px;
+            letter-spacing: 0.4px;
+            text-align: center;
+            margin:0 0 1.5rem 0;
+        }
+
+        .footer-contents{
+            margin:0 4.5rem 0 3rem;
+        }
+
+        .footer-wrapper{
+            page-break-inside: avoid;
+        }
+
+        .receipt-wrapper{
+            position:relative;
+        }
+
+        .footer-container{
+            width:100%;
+            bottom:0;
+            left:0;
+            right:0;
+            position:absolute;
+        }
+
+        /* thank section */
+        .thanksSection{
+            background-color: #363740;
+            color:white;
+            text-align: center;
+            margin:0 0 1rem 0;
+            width:100%;
+        }
+
+        .thanksSection h4{
+            font-size:16px;
+            font-weight:700;
+            padding:1rem 0;
+        }
+
+        /* contact icons group */
+        .contact-group ul{
+            list-style: none;
+        }
+
+        .contact-group{
+            text-align: center;
+            margin:1.5rem 0 6rem 0;
+        }
+
+        .container div {
+            display:inline-block ;
+            vertical-align: top;
+        }
+
+        .contact-group .container.nowrap{
+            text-align: left;
+        }
+
+        .icon-1,.icon-2{
+            width:15rem;
+        }
+
+        .pdf-table .contact-details{
+            padding: 0 0 0 0.25rem;
+        }
+
+        .icon-1 .icon{
+            background-image: url(../images/fontawesome-tel.png);
+            background-repeat: no-repeat;
+            background-size:16px;
+        }
+
+        .icon-1 .icon,
+        .icon-2 .icon,
+        .icon-3 .icon{
+            width:16px;
+            height:16px;
+        }
+
+        .icon-2{
+            position:relative;
+        }
+
+        .icon-2 .icon{
+            background-image: url(../images/fontawesome-envelop.png);
+            background-repeat: no-repeat;
+            background-size:16px;
+            position:absolute;
+            left:-10%;
+        }
+
+        .icon{
+            margin-top:0.05rem;
+        }
+
+        .icon-3 .icon{
+            background-image: url(../images/fontawesome-gps.png);
+            background-repeat: no-repeat;
+            background-size:16px;
+            left: -10%;
+            position:absolute;
+        }
+
+        .container.icon-3{
+            text-align: right;
+            position:relative;
+        }
+
+        .contact-details p{
+            text-align:left;
+        }
+
+        .contact-group .pdf-table tbody{
+            vertical-align: baseline;
+        }
+
+        .spacer-between-footer{
+            margin:7rem 0;
+        }
+
+        .bottom-styleLine{
+            position:fixed;
+            left:0px;
+            right:0px;
+            bottom:0px;
+        }
+
+        .resident-top-styling{
+            text-align:right;
+        }
+
+        .thickLine{
+            height:3rem;
+            width:100%;
+            background-color: #363740;
+        }
+
+        .line-spacer{
+            margin:0 0 0.5em 0;
+        }
+
+        .thinLine{
+            height:1rem;
+            width:100%;
+            background-color: #363740;
+        }
+
+        .content-container{
+            margin:6rem 4.5rem 3rem 3rem;
+        }
+
+        .content-container .content{
+            text-align: center;
+        }
+
+        .pdf-table,
+        .receipt-StyleLine{
+            width:100%;
+        }
+
+        .table-container{
+            margin-top:0.5rem;
+        }
+
+        .rightWrapper{
+            width:100%;
+            margin-top:0.5rem;
+            margin:0.5rem 0 0 0;
+        }
+
+        .pdf-table.right-container{
+            text-align: right;
+            width:40%;
+            margin: 0 0 0 auto;
+        }
+
+        .right-container .title,
+        .right-container .description{
+            margin:0 0 0 auto;
+        }
+
+        .pdf-table.right-container .title,
+        .subTotal-wrapper .pdf-table .title{
+            font-weight: 800;
+            font-size:12px;
+            letter-spacing: 0.1px; /*0.37*/
+            white-space: nowrap;
+            margin-right:0.25rem;
+            text-align: right;
+        }
+
+        .subTotal-wrapper .pdf-table .title{
+            font-weight: 800;
+            font-size:12px;
+            letter-spacing: 0.1px; /*0.37*/
+            margin:0 0 0 auto;
+        }
+
+        .subTotal-wrapper .description{
+            margin:0 0 0 auto;
+            text-align: right;
+        }
+
+        .subTotal-wrapper .total-container{
+            background-color: #363740;
+            margin:0.25rem 0 0 auto;
+            padding:0.25rem 0;
+            width:100%;
+        }
+
+        .subTotal-wrapper .total-amt{
+            color:white;
+            font-size:16px;
+            letter-spacing: 0.15px;
+            font-weight:700;
+            margin:0 0 0 auto;
+            text-align: right;
+        }
+
+        .contact-group .contact-title{
+            font-size:12px;
+            font-weight:800;
+        }
+
+        .contact-group .contact-description{
+            font-size:12px;
+        }
+
+        .date-period,.spacing-desc{
+            margin-right:0.25rem;
+        }
+
+        .date-period::before{
+            content:'-';
+        }
+
+        .date-block{
+            display: block;
+        }
+
+        .bill-type{
+            text-transform: uppercase;
+            width:12rem;
+            margin: 0 auto;
+            display: block;
+            overflow-wrap: break-word;
+        }
+
+        .bill-amt{
+            color:#11C911;
+            font-weight:600;
+        }
+
+        .receipt-StyleLine{
+            height: 50px;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        img.bottom-img{
+            width:22px;
+            height:auto;
+        }
+
+        .address-td{
+            width:15rem;
+        }
+
+        .receipt-StyleLine.top{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+        }
+
+        .bold{
+            font-weight:600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page_break"></div>
+
+    <!-- content for receipt -->
+    <div class="receipt-wrapper">
+
+        <!-- top styling line -->
+        <table cellspacing="0" cellpadding="0" class="receipt-StyleLine top">
+            <tbody>
+                <tr>
+                    <td><div class="thickLine line-spacer"></div></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><div class="thinLine"></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- content -->
+        <section class="content-wrapper">
+            <div class="content-container">
+                <div class="content">
+
+                    <!-- header -->
+                    <table class="pdf-table header" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><h1>PAYMENT RECEIPT</h1></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- ADDRESS -->
+                    <table class="pdf-table address-wrapper" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <p class="address-title">
+                                        From:
+                                    </p>
+                                </td>
+                                <td class="last-child">
+                                    <p class="address-title">
+                                        Bill to:
+                                    </p>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="description">
+                                        allConnect by
+                                        <br>
+                                        <span class="bold">
+                                            Huacomm Telecommunications Engineering (M) Sdn Bhd
+                                        </span>
+                                        <br>
+                                        Unit B-6-8 & B-6-9, Level 6, Block B,
+                                        Southgate Commercial Center, No.2,
+                                        Jalan Dua Off Jalan Chan Sow Lin,
+                                        55200 Kuala Lumpur.
+                                    </p>
+                                </td>
+                                <td class="last-child">
+                                    <p class="description">
+                                        <span class="bold">
+                                            Alishan EkoCheras
+                                        </span>
+                                        <br>
+                                        FD-08, FD-09 & FD-10 Food District First Floor, EkoCheras Mall No.693, Batu, 5, Jln Cheras, 56000 Cheras, Wilayah Persekutuan Kuala Lumpur
+                                        <br>
+                                        sunway@email.com
+                                    </p>
+                                </td>
+                                <td class="logo-wrapper">
+                                    <!-- <img src="../images/proConnect.png"> -->
+                                    <div class="logo-container"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="rightWrapper">
+
+                        <table class="pdf-table right-container" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="title">Ref Number:</span>
+                                        <span class="description">REF8923489010</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="title">Date:</span>
+                                        <span class="description">2022-04-20</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- table -->
+                    <div class="table-container">
+                        <table class="pdf-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice Number</th>
+                                    <th>Bill Type</th>
+                                    <th>Amount</th>
+                                    <th>Amount Paid (RM)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV-9950461667897091</td>
+                                    <td><p class="bill-type">facilityfacilityfacilityfacilityfacility</p></td>
+                                    <td>00000000.00</td>
+                                    <td><p class="bill-amt">00000000.00</p></td>
+                                </tr>
+
+                            </tbody>
+
+                          </table>
+                          <!-- end of table content -->
+                    </div>
+                    <!-- end of table container -->
+
+                    <div class="pageStyle_bot1 mb-2"></div>
+                    <div class="pageStyle_bot2"></div>
+
+                    <div class="subTotal-wrapper">
+                        <table class="pdf-table" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p class="title">SUB TOTAL (RM):</p>
+                                    </td>
+                                    <td>
+                                        <p class="description">96.90</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="total-container">
+                                            <p class="total-amt">TOTAL (RM):</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="total-container">
+                                            <p class="total-amt">000000</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- contact info and thanks section -->
+                    <section class="footer-wrapper">
+                        <div class="footer-container">
+                            <div class="footer-contents">
+
+                                <p class="description">This is a computer generated receipt. No signature is required.</p>
+
+                                <table class="thanksSection pdf-table">
+                                    <thead>
+                                      <tr>
+                                        <th><h4>Thank you for using our service.</h4></th>
+                                      </tr>
+                                    </thead>
+                                </table>
+
+                                <div class="contact-group">
+
+                                    <table class="pdf-table">
+                                        <tr>
+                                          <td colspan="2" class="icon-1">
+                                            <div class="container nowrap">
+                                                <div class="icon">
+                                                    <!-- <img src="../images/fontawesome-tel.png" alt="tel" class="bottom-img"> -->
+                                                </div>
+                                                <div class="contact-details">
+                                                    <p class="contact-title">Tel:</p>
+                                                    <p class="contact-description">+6019 248 1024</p>
+                                                </div>
+                                            </div>
+                                          </td>
+
+                                          <td colspan="2" class="icon-2">
+                                            <div class="container nowrap">
+                                                <div class="icon">
+                                                    <!-- <img src="../images/fontawesome-envelop.png" alt="mail" class="bottom-img"> -->
+                                                </div>
+                                                <div class="contact-details">
+                                                    <p class="contact-title">Email:</p>
+                                                    <p class="contact-description">inquiry@proconnect.com.my</p>
+                                                </div>
+                                            </div>
+                                          </td>
+
+                                          <td colspan="3" class="address-td">
+                                            <div class="container icon-3">
+                                                <div class="icon">
+                                                    <!-- <img src="../images/fontawesome-gps.png" alt="address" class="bottom-img"> -->
+                                                </div>
+                                                <div class="contact-details">
+                                                    <p class="contact-title">Address:</p>
+                                                    <p class="contact-description">Unit B-6-8 & B-6-9, Level 6, Block B, Southgate Commercial Center, No.2, Jalan Dua Off Jalan Chan Sow Lin, 55200 Kuala Lumpur.</p>
+                                                </div>
+                                            </div>
+                                          </td>
+
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                                <!-- contact info container ends -->
+
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                <!-- end of content -->
+            </div>
+        </section>
+
+        <div class="spacer-between-footer"></div>
+
+        <!-- bottom styling line -->
+        <table cellspacing="0" cellpadding="0" class="receipt-StyleLine bottom-styleLine">
+            <tbody>
+                <tr>
+                    <td><div class="thinLine line-spacer"></div></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><div class="thickLine"></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- <div class="pageStyle_bot1 mb-2"></div>
+        <div class="pageStyle_bot2"></div> -->
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proConnect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            background-color: #f9f9f9;
+        }
+
+        .mail-wrapper{
+            width:100%;
+            padding-bottom:3rem;
+            font-family: 'Poppins', sans-serif;
+            color:#595959;
+        }
+        
+        .mail-wrapper table{
+            max-width:700px;
+            margin:0 auto;
+            padding-left:2rem;
+            padding-right:2rem;
+            width:100%;
+            border-spacing:0;
+        }
+
+        .mail-container{
+            background-color: white;
+            text-align: center;
+            padding:1.5rem 0;
+            border:1px solid #DFE0EB;
+        }
+
+        .mail-container img{
+            width:56px;
+            height:auto;
+        }
+
+        .mail-container h5{
+            letter-spacing: 0.27px;
+            font-weight: 600;
+            font-size: 18px;
+            margin:1rem 0;
+        }
+
+        .desc-header{
+            font-size:16.66px;
+            letter-spacing: 0.27px;
+        }
+
+        .card-wrapper{
+            background-color:#595959;
+            border-radius: 6.96px;
+            padding:1.5rem 2rem;
+            width:100%;
+            max-width:355px;
+            margin:2rem auto;
+        }
+
+        .card-wrapper .bottom-container{
+            margin-top:1rem;
+        }
+
+        .card-title{
+            color:#ABABAB;
+            letter-spacing: 0.27px;
+            font-size:13.33px;
+            line-height:15px;
+        }
+
+        .card-desc{
+            color:white;
+            letter-spacing: 0.27px;
+            font-weight: 600;
+            font-size:16.66px;
+        }
+
+        .login-wrapper{
+            border:2px solid #363740;
+            border-radius:6.96px;
+            padding:0.25rem 3rem;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color:#363740;
+            font-weight:500;
+            letter-spacing: 0.25px;
+            margin-top:2.275rem;
+        }
+
+        .img-container{
+            margin:1rem 0;
+        }
+
+        .mail-footer{
+            text-align: center;
+            margin-top:1rem !important;
+        }
+
+        .mail-footer img{
+            width:105px;
+            height:auto;
+            object-fit: cover;
+        }
+
+        .last-link{
+            margin-left:1.5rem;
+        }
+
+        .mail-footer p{
+            font-size:12px;
+            letter-spacing: 0.27px;
+        }
+
+        .spacer{
+            margin:0 0.5rem;
+        }
+
+        a .login-wrapper:hover,
+        * [lang~="x-login"]:hover{
+            background-color: #595959;
+            color:white;
+            border-color:#595959;
+        }
+
+        @media only screen and (max-width:768px) {
+            .mail-container{
+                max-width:576px;
+                border:none;
+            }
+
+            .desc-header{
+                font-size:12px;
+            }
+
+            .card-wrapper{
+                width:78%;
+                max-width: 355px;
+                margin-top:0.75rem !important;
+            }
+
+            .login-wrapper{
+                font-size:12.66px;
+                padding-left:1.5rem;
+                padding-right:1.5rem;
+                background-color: #363740;
+                color:white;
+                font-weight:400;
+            }
+
+            .mail-footer{
+                background-color: white;
+                margin-top:0 !important;
+                padding-top:0.75rem;
+            }
+
+            .mail-wrapper, body{
+                background-color: white;
+            }
+
+            table.mail-footer{
+                max-width:75%;
+            }
+
+            .img-container{
+                white-space: nowrap;
+            }
+
+            .nowrap{
+                white-space: nowrap;
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="mail-wrapper">
+        <table class="mail-container">
+
+            <!-- HEADER -->
+            <tbody>
+                <tr>
+                    <td><img src="../images/checked-main.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td><h5>Your Residence Admin Account has been Successfully Created!</h5></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="desc-header">Below are your system generated credentials,</p>
+                        <p class="desc-header">Please change your password after your first successful login.</p>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- CONTENT -->
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="card-wrapper">
+                            <div class="top-container">
+                                <p class="card-title">Email</p>
+                                <p class="card-desc">long long long long long long@gmail.com</p>
+                            </div>
+                            <div class="bottom-container">
+                                <p class="card-title">Password</p>
+                                <p class="card-desc">578928</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- <tbody>
+                <tr>
+                    <td>
+                        <a href="login.html" class="login-txt">
+                            <div class="login-wrapper" lang="x-login">
+                                Go To Login Page
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </tbody> -->
+        </table>
+
+        <!-- FOOTER -->
+        <!-- <table class="mail-footer">
+            <tbody>
+                <tr>
+                    <td>
+                        <p>We have sent this to you as part of our Welcome to xxx by xxx.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+    </div>
+</body>
+</html>

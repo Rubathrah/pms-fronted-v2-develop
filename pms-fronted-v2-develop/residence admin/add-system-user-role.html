@@ -1,0 +1,807 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<!--Required meta tags-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--BOOTSTRAP CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<!--GOOGLE FONT-->
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	
+	<!--CUSTOMISED CSS-->
+	<link rel="stylesheet" href="style.css">
+	
+	<!--FONTAWESOME CSS-->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	
+	<!-- CAROUSEL CSS-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<!--BOOTSTRAP JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- CAROUSEL JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<!--CUSTOMISED JS-->
+	<script src="../javascript/sidebar.js"></script>
+	<script src="../javascript/navActive.js"></script>
+	<script src="../javascript/sidebarOpen.js"></script>
+
+  	<title>proConnect</title>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			
+			<!--Sidebar -->
+	  		<div class="g-0 sideBar-wrapper">
+				<nav class="sidebar py-2 mb-4">
+					<ul class="nav d-flex flex-column align-items-start">
+						
+						<!-- Logo and Name -->
+						<div class="text-center logo-container">
+							<a href="index.html">
+								<img src="../images/proconnect_with_text_white_.png" alt="Logo" class="sidebar-logo">
+								<img src="../images/proConnect without text.png" alt="Logo" class="sidebar-logo-hide">
+							</a>
+							<i class="fas fa-chevron-double-left sidebar-hamburger"></i>
+						</div>
+
+						<div class="lineDivider"></div>
+
+						<div class="sidebar-scroll-container">
+							<div class="sidebar-scroll">
+								<li class="nav-item">
+									<a href="index.html" class="nav-link">
+										<i class="fas fa-chart-pie sidebar-icon"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-ticket-alt sidebar-icon"></i>
+										<span>Residence</span>
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+									
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="add-block.html">
+												<span class="ms-5">Add Block</span>
+											</a>
+										</li>
+
+										<li>
+											<a class="nav-link-sub nav-link" href="accounts.html">
+												<span class="ms-5">Accounts</span>
+											</a>
+										</li>
+
+										<li>
+											<a class="nav-link-sub nav-link" href="view-block.html">
+												<span class="ms-5">View Block</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-book sidebar-icon"></i>
+										<span>Billing</span>
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+									
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="payment.html">
+											<span class="ms-5">Billing Overview</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="payment-outstanding.html">
+												<span class="ms-5">Oustanding Invoices</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="payment-approval.html">
+												<span class="ms-5">Payment Approval</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="payment-history.html">
+												<span class="ms-5">Payment History</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="recurring-bill.html">
+												<span class="ms-5">Recurring Bill</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item">
+									<a href="facilities.html" class="nav-link">
+										<i class="fas fa-building sidebar-icon"></i>
+										<span>Facilities</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="parcel.html" class="nav-link">
+										<i class="fas fa-box sidebar-icon"></i>
+										<span>Parcel</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="visitors.html" class="nav-link">
+										<i class="fas fa-users sidebar-icon"></i>
+										<span>Visitors</span>
+									</a>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-key sidebar-icon"></i>
+										<span>VP Management</span>
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="vp-schedule.html">
+												<span class="ms-5">VP Schedules</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="vp-preference.html">
+												<span class="ms-5">VP Preferences</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="vp-booking.html">
+												<span class="ms-5">VP Bookings</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-sitemap sidebar-icon"></i>
+										<span>Vendor Management</span>
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="vendor.html">
+												<span class="ms-5">Vendors</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="service-contract.html">
+												<span class="ms-5">Service Contracts</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item">
+									<a href="asset.html" class="nav-link"> 
+										<i class="fas fa-layer-group sidebar-icon"></i>
+										<span>Asset Management</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="defect.html" class="nav-link">
+										<i class="fas fa-exclamation-triangle sidebar-icon"></i>
+										<span>Defect Management</span>
+									</a>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-users-class sidebar-icon"></i>
+										<span>Community</span>
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="rules.html">
+												<span class="ms-5">Rules</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="notices.html">
+												<span class="ms-5">Notices</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item has-submenu">
+									<a class="nav-link" href="#">
+										<i class="fas fa-headset sidebar-icon"></i>
+										<span>Support</span> 
+										<i class="fas fa-caret-down ms-2"></i>
+									</a>
+
+									<ul class="submenu collapse py-2">
+										<li>
+											<a class="nav-link-sub nav-link" href="live-chat.html">
+												<span class="ms-5">Live Chat</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="cases.html">
+												<span class="ms-5">Active Cases</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="cases-history.html">
+												<span class="ms-5">Case History</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="emergency.html">
+												<span class="ms-5">Emergency</span>
+											</a>
+										</li>
+										<li>
+											<a class="nav-link-sub nav-link" href="contacts.html">
+												<span class="ms-5">Contacts</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+
+							<div class="lineDivider"></div>
+
+							<!-- nav bottom -->
+							<div class="nav-container nav-bottom">
+								<li class="nav-item">
+									<a href="settings.html" class="nav-link">
+									<i class="fas fa-cog sidebar-icon"></i>
+									<span>Settings</span></a>
+								</li>
+								<li class="nav-item">
+									<a href="subscription.html" class="nav-link">
+									<i class="fas fa-file-certificate sidebar-icon"></i>
+									<span>Subscription</span></a>
+								</li>
+								<li class="nav-item">
+									<a href="activity-log.html" class="nav-link">
+									<i class="fas fa-ballot sidebar-icon"></i>
+									<span>User Activities</span></a>
+								</li>
+							</div>
+						</div>
+					</ul>
+
+					<span class="bg-decorator one"></span>
+					<span class="bg-decorator two"></span>
+					<span class="bg-decorator three"></span>
+					<span class="bg-decorator four"></span>
+				</nav>
+			</div>
+
+	  		<!--RIGHT SIDE CONTENT-->
+	  		<div class="col g-0">
+				<div class="row justify-content-center rightContainer">
+		  
+					<!--TOPNAV HEADER-->
+					<nav class="navbar sticky-top topNav">
+						<div class="container-fluid py-2">
+							<div class="d-flex justify-content-between align-items-center px-2 topNav-container">
+
+								<!-- TITLE -->
+								<h4>System Settings</h4>
+
+								<!-- LANGUAGE, LIVE CHAT, NOTIFICATION AND USER PROFILE -->
+								<div class="d-flex align-items-center justify-content-between">
+							
+									<!-- MULTI LANGUAGE -->
+									<div class="dropdown topNav-language text-link">
+										<button class="topNav-icon-container dropdown-toggle" 
+												type="button"
+												id="dropdownMenuButton1"
+												data-bs-toggle="dropdown"
+												aria-expanded="false">
+												
+											<i class="fas fa-globe-asia language">
+												<span>English</span>
+											</i>
+										</button>
+
+										<!-- LANGUAGE DROPDOWN BOX -->
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+											<div class="header-container">
+												<span id="pop-triangle"></span>
+												<p class="notif-header">Select a language</p>
+											</div>
+
+											<!-- LANGUAGE DROPDOWN MENU -->
+											<ul class="inner-container">
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<i class="fas fa-globe-asia language">
+																<span class="notif-desc">English</span>
+															</i>
+														</a>
+													</div>
+												</li>
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<i class="fas fa-globe-asia language">
+																<span class="notif-desc">Bahasa Melayu</span>
+															</i>
+														</a>
+													</div>
+												</li>
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<i class="fas fa-globe-asia language">
+																<span class="notif-desc">Chinese</span>
+															</i>
+														</a>
+													</div>
+												</li>
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<i class="fas fa-globe-asia language">
+																<span class="notif-desc">Indonesia</span>
+															</i>
+														</a>
+													</div>
+												</li>
+											</ul>
+										</ul>
+									</div>
+
+					
+									<!-- LIVE CHAT -->
+									<a href="live-chat.html" class="text-link">
+										<div class="topNav-icon-container">
+											<i class="fas fa-comments-alt message">
+												<span class="iconBubble">2</span>
+											</i>
+										</div>
+									</a>
+						
+
+									<!-- NOTIFICATION -->
+									<div class="dropdown topNav-notification text-link">
+										<button class="topNav-icon-container dropdown-toggle" 
+												type="button" 
+												id="dropdownMenuButton1" 
+												data-bs-toggle="dropdown" 
+												aria-expanded="false">
+											<i class="fas fa-bell notification">
+												<span style="background-color: green;" class="iconBubble">17</span>
+											</i>
+										</button>
+
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+											<div class="header-container">
+												<span id="pop-triangle"></span>
+												<p class="notif-header">NOTIFICATIONS</p>
+												<a href="#" class="mark-read">Mark all as read</a>
+											</div>
+											
+											<!-- NO NOTIFICATION -->
+											<!-- <p class="no-notif">No Notification Yet</p> -->
+
+											<ul class="inner-container">
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+
+												<!-- UNREAD -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper Unread">
+																<div class="header-wrapper">
+																	<p class="notif-title">Lorem ipsum dolor sit amet cumque dicta nulla sequi nam provident git dolorem?</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Lorem lorem lorem lorem ipsum dolor sit ametn minima voluptates odio aspernatur, placeat expeditligendi?</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+
+												<!-- COPY TESTING -->
+
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- READ -->
+												<li>
+													<div class="notif-wrapper">
+														<a class="dropdown-item" href="#">
+															<div class="notification-wrapper read">
+																<div class="header-wrapper">
+																	<p class="notif-title">Received Payment</p>
+																	<span class="notif-dot"></span>
+																	<p class="notif-time">just now</p>
+																</div>
+																<p class="notif-desc">Please verify the payment received</p>
+															</div>
+														</a>
+														<button title="Mark As Read">
+															<i class="fal fa-times"></i>
+														</button>
+													</div>
+												</li>
+												<!-- TESTING END -->
+											</ul>
+
+											<!-- VIEW ALL -->
+											<li>
+												<a class="dropdown-item view-all" href="notification.html">
+													<div class="notif-bottom-wrapper">
+														<div class="notif-bottom-container">
+															<span class="view-all-notif">View all</span>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+
+									<div class="mx-4 nav-lineDivider"></div>
+
+									<!-- USER PROFILE -->
+									<div class="dropdown">
+										<button class="drop-btn d-flex align-items-center">
+											<span class="profileName">John Doe</span>
+											<div class="navProfile-container">
+												<img src="https://images.unsplash.com/photo-1466112928291-0903b80a9466?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80" alt="" width="40" height="40" class="nav-profile">
+											</div>
+										</button>
+
+										<div class="dropdown-content">
+											<a href="profile.html">Profile</a>
+											<a href="change-password.html">Change Password</a>
+											<a href="login.html">Log Out</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+		  
+					<!-- ADD SYSTEM USER ROLE-->
+					<div class="col-11 g-0 mx-4">
+						<div class="px-4 mt-5">
+							<form>
+								<!-- TOP CONTAINER -->
+								<div class="bg-white mb-5 content-container">
+									
+									<!-- ADD SYSTEM USER ROLE HEADER -->
+									<div class="p-4">
+										<h5>Add System User Role</h5>
+									</div>
+									
+									<!-- FORM -->
+									<div class="px-4 pb-4 addForm">
+											
+										<!-- FIRST ROW -->
+										<div class="addLabel-container">
+											<label for="" class="mb-1">Name</label>
+											<i class="fas fa-asterisk ms-1"></i>
+										</div>
+										<input type="text" class="form-control" id="" placeholder="Name">
+										
+
+										<!-- BUTTON -->
+										<div class="button-wrapper">
+											<div class="buttonContainer">
+												<button type="button" class="btn btn-primary">Add Role</button>
+											</div>
+											<p class="text-end">* Required fields</p>
+										</div>
+									</div>
+										
+								</div>
+								<!-- TOP CONTAINER END -->
+
+								<!-- BOTTOM CONTAINER -->
+								<div class="bg-white mb-5 content-container">
+									
+									<!-- ASSIGN PERMISSION HEADER -->
+									<div class="p-4">
+										<h5>Assign Permissions</h5>
+									</div>
+									
+									<!-- FORM -->
+									<div class="px-4 pb-4 addForm">
+											
+										<!-- FIRST ROW -->
+										<div class="addLabel-container">
+											<label for="" class="mb-1">Role</label>
+											<i class="fas fa-asterisk ms-1"></i>
+										</div>
+										<select class="form-select" aria-label="Default select example">
+											<option selected>Select system user role</option>
+											<option>Admin</option>
+										</select>
+
+										<!-- SECOND ROW -->
+										<div class="addLabel-container mt-2">
+											<label for="" class="mb-1">Permissions</label>
+											<i class="fas fa-asterisk ms-1"></i>
+										</div>
+										<div class="content-container add-permission-container">
+											<div class="items">
+											<button type="button" class="btn btn-primary">add block<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view units<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view accounts<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view transaction<i class="fal fa-plus"></i></button>
+											<button type="button" class="btn btn-primary">create invoice<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">upload bulk invoice<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">facility bookings<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create payment<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">approve payment<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">reject payment<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create parcel<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update parcel<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete parcel<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view parcels<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">add facility<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update facility<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">change status<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete facility<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view facilities<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create vp<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update vp<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete vp<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update vp settings<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view vp bookings<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update vp booking<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create vendor<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update vendor<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete vendor<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view vendor<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create contract<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update contract<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete contract<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view contracts<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create asset<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update asset<i class="fal fa-plus"></i></button>
+                     	                    <button type="button" class="btn btn-primary">delete asset<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view asset<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view defects<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update defeccts<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view cases<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">updates cases<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">live chat<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view settings<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view emails<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view users<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">edit users<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete users<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">billing preference<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">add bank account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">edit bank account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete bank account<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view bank accounts<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create rule<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">create notice<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view notices<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update rule<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete rule<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">update notice<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete notice<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view rules<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view subscription<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">delete block<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">upload bulk tenant<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">upload bulk owner<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">billing preferences<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view visitors<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">export visitors<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view vp schedules<i class="fal fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary">view vp settings<i class="fal fa-plus"></i></button>
+											</div>
+										</div>
+
+										<!-- THIRD ROW -->
+										<div class="addLabel-container mt-2">
+											<label for="" class="mb-1">Added Permissions</label>
+											<i class="fas fa-asterisk ms-1"></i>
+										</div>
+										<div class="content-container added-permission-container">
+											<button type="button" class="btn btn-light">View Transaction<i class="fal fa-plus"></i></button>
+											<button type="button" class="btn btn-light">Create Invoice<i class="fal fa-plus"></i></button>
+											<button type="button" class="btn btn-light">Create Payment<i class="fal fa-plus"></i></button>
+											<button type="button" class="btn btn-light">Approve Payment<i class="fal fa-plus"></i></button>
+										</div>
+
+										<!-- BUTTON -->
+										<div class="button-wrapper">
+											<div class="buttonContainer">
+												<button type="button" class="btn btn-primary">Assign Permissions</button>
+												<button type="button" class="btn cancel-btn-style ms-3">Revoke All Permissions</button>
+											</div>
+											<p class="text-end">* Required fields</p>
+										</div>
+									</div>
+										
+								</div>
+
+							</form>
+						</div>
+					</div>	
+					<!-- ADD SYSTEM USER ROLE END -->
+				</div>
+	  		</div>
+		</div>
+	</div>
+</body>
+</html>

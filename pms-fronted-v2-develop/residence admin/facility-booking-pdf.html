@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>proConnect</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            color:#363740;
+            font-family:'Mulish';
+        }
+
+        .invoice-wrapper{
+            width:816px;
+            margin:3rem auto;
+            /* position:relative; */
+            width:100%;
+            /* height:100%; */
+        }
+
+        .invoice-container{
+            margin:0 auto;
+            /* left: 0; */
+            /* right: 0; */
+            width: 325px;
+            text-align: center;
+            /* position: absolute; */
+            /* max-width: 25%; */
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .head-description{
+            letter-spacing: 0.16px;
+            font-weight:600;
+            font-size:13.61px;
+        }
+
+        img{
+            width:85px;
+            margin-top: 0.5rem;
+        }
+
+        h3{
+            font-weight:800;
+        }
+        
+        .header h3{
+            font-size:21px;
+            letter-spacing: 0.16px;
+            margin-top:0.75rem;
+        }
+
+        table{
+            width:100%;
+        }
+
+        table td{
+            text-align: center;
+        }
+
+        .head-description .two{
+            margin-top:0.5rem;
+        }
+
+        .content{
+            margin-top:1rem;
+        }
+        
+
+        .content h3{
+            font-size:20px;
+            letter-spacing: 0.34px;
+        }
+
+        .card-header{
+            padding:0.75rem;
+        }
+        
+
+        .card-wrapper{
+            border-radius:5.44px;
+            border: 3px solid #363740;
+        }
+
+        .card-title{
+            color:#9FA2B4;
+            letter-spacing: 0.17px;
+            font-weight:600;
+            font-size:12px;
+        }
+
+        .card-desc, .time{
+            color:white;
+            font-weight:600;
+            letter-spacing: 0.34px;
+            font-size:13.6px;
+        }
+        .card-desc .time{
+            margin-right:0.25rem;
+        }
+
+        .card-desc span.time::after{
+            content: ',';
+        }
+
+        .card-content-wrapper{
+            padding:1.5rem;
+            background-color: #363740;
+        }
+        
+        .card-content{
+            margin-top:1rem;
+        }
+
+        .card-content:first-child{
+            margin:0;
+        }
+
+        .uppercase{
+            text-transform: uppercase;
+        }
+
+        .bottom-caption{
+            margin-top:1rem;
+            font-weight:800;
+            font-size:21.78px;
+            letter-spacing: 0.34px;
+        }
+
+        .time-period{
+            margin: 0 0.25rem 0 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- CONTAINER -->
+    <div class="invoice-wrapper">
+        <div class="invoice-container">
+
+            <!-- HEADER -->
+            <table cellspacing="0" cellpadding="0" class="header">
+                <tbody>
+                    <tr>
+                        <td class="head-description">You have successfully made a booking for</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td><h3>Swimming Pool</h3></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td><img src="../images/checked.png" alt=""></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td class="head-description">
+                            <div class="two">
+                                Please refer to your details below;
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- CONTENT -->
+            <table cellspacing="0" cellpadding="0" class="content">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="card-wrapper">
+                                <div class="card-header">
+                                    <h3>BOOKING CONFIRMATION</h3>
+                                </div>
+
+                                <div class="card-content-wrapper">
+
+                                    <div class="card-content">
+                                        <p class="card-title">Reference Number</p>
+                                        <p class="card-desc">VISITOR-561628</p>
+                                    </div>
+                                    
+                                    <div class="card-content">
+                                        <p class="card-title">Name</p>
+                                        <p class="card-desc">John Doe Long Name</p>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="card-title">Date And Time</p>
+                                        <p class="card-desc">
+                                            <span class="time">15 May 22</span>
+                                            <br>
+                                            12:00
+                                            <span class="time-period"></span>
+                                            13:00
+                                        </p>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="card-title">Number Of Pax</p>
+                                        <p class="card-desc">3 pax</p>
+                                    </div>
+                                    
+                                    <div class="card-content">
+                                        <p class="card-title">Booking Status</p>
+                                        <p class="card-desc">Approved</p>
+                                    </div>
+                                    
+
+                                    <div class="card-content">
+                                        <p class="card-title">Residence Name</p>
+                                        <p class="card-desc uppercase">Property long long long long long long long long name</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="bottom-caption">HAVE A GREAT DAY!</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
